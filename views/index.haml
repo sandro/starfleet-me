@@ -17,6 +17,15 @@
       h1,h2 { font-weight: normal; margin: 0px 0 16px; }
       h1 { font-size: 44px; }
       h2 { font-size: 28px; }
+      a,a:visited { color: #4169E1}
+
+    :javascript
+      function showExample() {
+        var e = document.getElementById("example");
+        e.innerHTML = "<img src='/example.gif' />";
+        document.getElementById('show-link').innerHTML = "";
+        return false;
+      }
 
   %body
     %article
@@ -36,3 +45,7 @@
           %code
             %a(href="http://starfleet-me.herokuapp.com/?source=http://goo.gl/9vO6c") http://starfleet-me.herokuapp.com/?source=http://goo.gl/9vO6c
 
+      %section
+        %h2 Example
+        #example
+        %a#show-link(href="#" onclick="showExample()") Load example
