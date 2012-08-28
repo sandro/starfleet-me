@@ -1,0 +1,34 @@
+!!! 5
+%html
+  %head
+    :css
+      body { padding: 10px 0; width: 100%; font-family: Palatino; }
+      article { margin: 0 auto; width: 800px; }
+      pre { width: 100%; text-overflow: scroll; }
+      section { margin: 0 0 28px 0; }
+      input[type=text] {
+        width: 100%;
+        font-size: 24px;
+        margin-bottom: 12px;
+      }
+      header { margin-bottom: 32px; }
+      h1,h2 { font-weight: normal; margin: 0px 0 16px; }
+      h1 { font-size: 44px; }
+      h2 { font-size: 28px; }
+
+  %body
+    %article
+      %header
+        %h1 Starfleet Me
+
+      %section
+        %pre
+          %code
+            %a(href="http://starfleet-me.herokuapp.com/?source=http://goo.gl/9vO6c") http://starfleet-me.herokuapp.com/?source=http://goo.gl/9vO6c
+
+      %section
+        %h2 Starfleet your own image
+        %form(method='get')
+          %input(placeholder="http://goo.gl/9vO6c" type="text" name="source")
+          %br
+          %input(type="submit" value="Starfleet me")
