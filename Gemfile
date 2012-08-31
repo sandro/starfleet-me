@@ -2,4 +2,7 @@ source 'https://rubygems.org'
 
 gem 'sinatra'
 gem 'haml'
-gem 'shotgun', group: :utility
+group :utility do
+  gem 'shotgun'
+  gem 'debugger'
+end
