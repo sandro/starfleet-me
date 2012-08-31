@@ -78,6 +78,7 @@ end
 
 get '/' do
   generator = StarfleetMe::Generator.new params[:source]
+  etag Digest::SHA1.hexdigest(params[:source].to_s)
   if generator.valid?
     generator.animate
     send_file generator.output_path, :type => :gif
@@ -86,3 +87,9 @@ get '/' do
   end
 end
 
+get '/foo' do
+  etag Digest::SHA1.hexdigest('123')
+  p env['HTTP_IF_NONE_MATCH']
+  p response['ETag']
+  Time.now.to_s
+end
