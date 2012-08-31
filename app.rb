@@ -78,7 +78,7 @@ end
 
 get '/' do
   generator = StarfleetMe::Generator.new params[:source]
-  etag Digest::SHA1.hexdigest(params[:source].to_s)
+  etag Digest::SHA1.hexdigest(params[:source]) unless params[:source].nil?
   if generator.valid?
     generator.animate
     send_file generator.output_path, :type => :gif
