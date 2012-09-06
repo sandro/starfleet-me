@@ -186,6 +186,7 @@ get '/' do
         send_file generator.output_path, :type => :gif
       end
     else
+      `mkdir -p tmp`
       output_path = './tmp/anim.gif'
       File.open(output_path, 'wb') do |f|
         f.write(Base64.decode64(gif[:data]))
