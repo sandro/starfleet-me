@@ -3,8 +3,8 @@
   %head
     :css
       body { padding: 10px 0; font-family: Palatino, serif; }
-      article { margin: 0 auto; width: 800px; }
-      pre { text-overflow: scroll; padding: 20px; background: #F0F8FF; }
+      article { margin: 0 auto; width: 840px; }
+      pre { overflow: auto; padding: 20px; background: #F0F8FF; }
       pre a { color: #333; }
       code { font-family: Monaco, monospace; }
       section { margin: 0 0 28px 0; }
@@ -17,7 +17,7 @@
       h1,h2 { font-weight: normal; margin: 0px 0 16px; }
       h1 { font-size: 44px; }
       h2 { font-size: 28px; }
-      a,a:visited { color: #4169E1}
+      a, a:link, a:visited { color: #4169E1}
 
     :javascript
       function showExample() {
@@ -43,7 +43,10 @@
         %h2 API
         %pre
           %code
-            %a(href="http://starfleet-me.herokuapp.com/?source=http://goo.gl/9vO6c") http://starfleet-me.herokuapp.com/?source=http://goo.gl/9vO6c
+            = preserve do
+              %a(href="/?source=http://goo.gl/9vO6c") http://starfleet-me.herokuapp.com/?source=http://goo.gl/9vO6c
+              %br
+              %a(href="/visor?source=http://www.lambdal.com/test2.jpg") http://starfleet-me.herokuapp.com/visor?source=http://www.lambdal.com/test2.jpg
 
       %section
         %h2 Example
